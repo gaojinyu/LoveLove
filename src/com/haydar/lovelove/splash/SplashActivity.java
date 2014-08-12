@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -15,30 +14,31 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
-import com.haydar.lovelove.LocalParams;
 import com.haydar.lovelove.R;
+import com.haydar.lovelove.util.LocalParams;
+import com.haydar.lovelove.util.NetworkConn;
 
-/**   
- * @ClassName:  SplashActivity   
- * @Description:TODO(欢迎页)   
- * @author: gjy  
- * @date:   2014-8-12 上午11:30:44   
- *      
- */  
+/**
+ * @ClassName: SplashActivity
+ * @Description:TODO(欢迎页)
+ * @author: gjy
+ * @date: 2014-8-12 上午11:30:44
+ * 
+ */
 public class SplashActivity extends Activity implements OnPageChangeListener{
-	private RelativeLayout  mSplashYesFist;
+	private RelativeLayout mSplashYesFist;
 	private FrameLayout mSplashNoFirst;
 	private SharedPreferences sharedPreferences;
 	private ViewPager mViewPager;
 	private List<View> mViewList; // view视图list
 	private List<ImageView> mImageViewList;
 	private Context context;
-	private Button mLoginBtn,mRegisterBtn,mQQLoginBtn,mSinoLoginBtn;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -59,6 +59,54 @@ public class SplashActivity extends Activity implements OnPageChangeListener{
 
 	}
 
+	/**
+	 * 登录
+	 * @param view
+	 */
+	public void login(View view){
+		
+		if(NetworkConn.getInstance(context).isNetWorkConn()){
+			System.out.println("登录");
+		}else{
+			Toast.makeText(context, this.getString(R.string.network_no_string), Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	/**
+	 * 注册
+	 * @param view
+	 */
+	public void register(View view){
+		if(NetworkConn.getInstance(context).isNetWorkConn()){
+			System.out.println("登录");
+		}else{
+			Toast.makeText(context, this.getString(R.string.network_no_string), Toast.LENGTH_SHORT).show();
+		}
+	}
+	
+	/**
+	 * QQ登录
+	 * @param view
+	 */
+	public void loginByQQ(View view){
+		if(NetworkConn.getInstance(context).isNetWorkConn()){
+			System.out.println("登录");
+		}else{
+			Toast.makeText(context, this.getString(R.string.network_no_string), Toast.LENGTH_SHORT).show();
+		}
+	}
+	
+	/**
+	 * sino登录
+	 * @param view
+	 */
+	public void loginBySino(View view){
+		if(NetworkConn.getInstance(context).isNetWorkConn()){
+			System.out.println("登录");
+		}else{
+			Toast.makeText(context, this.getString(R.string.network_no_string), Toast.LENGTH_SHORT).show();
+		}
+	}
 	/**
 	 * @Title: initViewPager
 	 * @Description: TODO(初始化viewpager)
@@ -87,11 +135,9 @@ public class SplashActivity extends Activity implements OnPageChangeListener{
 		mImageViewList.add((ImageView) findViewById(R.id.splash_index_three));
 		mImageViewList.add((ImageView) findViewById(R.id.splash_index_four));
 		mViewPager.setAdapter(new ViewPagerAdater(mViewList));
-		mViewPager.setPageTransformer(true,
-				new SplashPageTransformer());
+		mViewPager.setPageTransformer(true, new SplashPageTransformer());
 		mViewPager.setCurrentItem(0);
-		mImageViewList.get(0).setImageResource(
-				R.drawable.splash_white_dot);
+		mImageViewList.get(0).setImageResource(R.drawable.splash_white_dot);
 		mViewPager.setOnPageChangeListener(this);
 
 		mViewPager.setOnTouchListener(new OnTouchListener() {
@@ -105,11 +151,9 @@ public class SplashActivity extends Activity implements OnPageChangeListener{
 				}
 				if (event.getAction() == MotionEvent.ACTION_MOVE) {
 					if ((event.getX() - touchX) > 0.0f) {
-						mViewPager
-								.setBackgroundColor(new Color().TRANSPARENT);
+						mViewPager.setBackgroundColor(new Color().TRANSPARENT);
 					} else {
-						mViewPager
-								.setBackgroundColor(new Color().WHITE);
+						mViewPager.setBackgroundColor(new Color().WHITE);
 					}
 				}
 				return false;
@@ -119,24 +163,25 @@ public class SplashActivity extends Activity implements OnPageChangeListener{
 
 	@Override
 	public void onPageScrollStateChanged(int arg0) {
-		
+
 	}
 
 	@Override
 	public void onPageScrolled(int arg0, float arg1, int arg2) {
-		
+
 	}
 
 	@Override
 	public void onPageSelected(int arg0) {
 		mViewPager.setCurrentItem(arg0);
 		for (int i = 0; i < mImageViewList.size(); i++) {
-			mImageViewList.get(i).setImageResource(
-					R.drawable.splash_dark_dot);
+			mImageViewList.get(i).setImageResource(R.drawable.splash_dark_dot);
 			if (arg0 == i) {
 				mImageViewList.get(i).setImageResource(
 						R.drawable.splash_white_dot);
 			}
 		}
 	}
+
+	
 }

@@ -18,6 +18,8 @@
         android:background="@drawable/login_bg"
         android:textColor="#ffffff"
         android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:onClick="login"
        />
 
     <Button
@@ -27,6 +29,8 @@
         android:text="@string/button_reg_text"
         android:background="@drawable/reg_bg" 
         android:textColor="#ffffff"
+        android:clickable="true"
+        android:onClick="register"
          android:layout_marginBottom="10dp"/>
 
     <Button
@@ -36,6 +40,8 @@
         android:text="@string/button_login_QQ_text"
         android:background="@drawable/login_qq_bg" 
         android:textColor="#ffffff"
+        android:clickable="true"
+        android:onClick="loginByQQ"
          android:layout_marginBottom="10dp"/>
        <Button
         android:id="@+id/login_sino_btn"
@@ -44,6 +50,8 @@
         android:text="@string/button_login_sino_text"
         android:background="@drawable/login_sino_bg" 
         android:textColor="#ffffff"
+        android:onClick="loginBySino"
+        android:clickable="true"
          android:layout_marginBottom="10dp"/>
 
 </LinearLayout>

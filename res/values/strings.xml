@@ -7,4 +7,5 @@
 	<string name="button_reg_text">注&#160;&#160;册</string>
 	<string name="button_login_QQ_text">QQ登陆</string>
 	<string name="button_login_sino_text">新浪微博登录</string>
+	<string name="network_no_string">当前网络连接不可用</string>
 </resources>
