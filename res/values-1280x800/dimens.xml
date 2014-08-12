@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="guide_buttom_high">15.0dip</dimen>
+     <dimen name="login_layout_padding_bottom">37.0dip</dimen>
+</resources>

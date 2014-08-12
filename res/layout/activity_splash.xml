@@ -2,9 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-
-    <com.harday.splashlibrary.SplashLibraryLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </com.harday.splashlibrary.SplashLibraryLayout>
+    <include        android:id="@+id/splash_layout_yes_first"
+        layout="@layout/splash_layout" />
+    <include        android:id="@+id/splash_layout_no_first"
+        layout="@layout/splash_zero" />
 </RelativeLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="24.0dip"
+    android:paddingRight="24.0dip"
+    android:background="#00000000"
+    android:paddingBottom="@dimen/login_layout_padding_bottom"
+    android:layout_gravity="bottom"
+   	 >
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_login_text" 
+        android:background="@drawable/login_bg"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="10dp"
+       />
+
+    <Button
+        android:id="@+id/reg_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_reg_text"
+        android:background="@drawable/reg_bg" 
+        android:textColor="#ffffff"
+         android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/login_qq_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_login_QQ_text"
+        android:background="@drawable/login_qq_bg" 
+        android:textColor="#ffffff"
+         android:layout_marginBottom="10dp"/>
+       <Button
+        android:id="@+id/login_sino_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_login_sino_text"
+        android:background="@drawable/login_sino_bg" 
+        android:textColor="#ffffff"
+         android:layout_marginBottom="10dp"/>
+
+</LinearLayout>
