@@ -1,10 +1,18 @@
 package com.haydar.lovelove.splash;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.http.conn.ConnectTimeoutException;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -22,6 +30,13 @@ import android.widget.Toast;
 import com.haydar.lovelove.R;
 import com.haydar.lovelove.util.LocalParams;
 import com.haydar.lovelove.util.NetworkConn;
+import com.tencent.a.b.m;
+import com.tencent.tauth.IRequestListener;
+import com.tencent.tauth.IUiListener;
+import com.tencent.tauth.Tencent;
+import com.tencent.tauth.UiError;
+import com.tencent.utils.HttpUtils.HttpStatusException;
+import com.tencent.utils.HttpUtils.NetworkUnavailableException;
 
 /**
  * @ClassName: SplashActivity
@@ -30,7 +45,7 @@ import com.haydar.lovelove.util.NetworkConn;
  * @date: 2014-8-12 上午11:30:44
  * 
  */
-public class SplashActivity extends Activity implements OnPageChangeListener{
+public class SplashActivity extends Activity implements OnPageChangeListener {
 	private RelativeLayout mSplashYesFist;
 	private FrameLayout mSplashNoFirst;
 	private SharedPreferences sharedPreferences;
@@ -38,6 +53,7 @@ public class SplashActivity extends Activity implements OnPageChangeListener{
 	private List<View> mViewList; // view视图list
 	private List<ImageView> mImageViewList;
 	private Context context;
+	private Tencent mTencent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -61,52 +77,91 @@ public class SplashActivity extends Activity implements OnPageChangeListener{
 
 	/**
 	 * 登录
+	 * 
 	 * @param view
 	 */
-	public void login(View view){
-		
-		if(NetworkConn.getInstance(context).isNetWorkConn()){
-			System.out.println("登录");
-		}else{
-			Toast.makeText(context, this.getString(R.string.network_no_string), Toast.LENGTH_SHORT).show();
+	public void login(View view) {
+
+		if (NetworkConn.getInstance(context).isNetWorkConn()) {
+
+		} else {
+			Toast.makeText(context, this.getString(R.string.network_no_string),
+					Toast.LENGTH_SHORT).show();
 		}
 	}
 
 	/**
 	 * 注册
+	 * 
 	 * @param view
 	 */
-	public void register(View view){
-		if(NetworkConn.getInstance(context).isNetWorkConn()){
+	public void register(View view) {
+		if (NetworkConn.getInstance(context).isNetWorkConn()) {
 			System.out.println("登录");
-		}else{
-			Toast.makeText(context, this.getString(R.string.network_no_string), Toast.LENGTH_SHORT).show();
+		} else {
+			Toast.makeText(context, this.getString(R.string.network_no_string),
+					Toast.LENGTH_SHORT).show();
 		}
 	}
-	
+
 	/**
 	 * QQ登录
+	 * 
 	 * @param view
 	 */
-	public void loginByQQ(View view){
-		if(NetworkConn.getInstance(context).isNetWorkConn()){
-			System.out.println("登录");
-		}else{
-			Toast.makeText(context, this.getString(R.string.network_no_string), Toast.LENGTH_SHORT).show();
+	public void loginByQQ(View view) {
+		if (NetworkConn.getInstance(context).isNetWorkConn()) {
+			if (!mTencent.isSessionValid()) {
+				mTencent = Tencent.createInstance("1102003725",
+						this.getApplicationContext());
+				mTencent.login(this, "all", new IUiListener() {
+					@Override
+					public void onError(UiError arg0) {
+						// TODO Auto-generated method stub
+						System.out.println("onError---" + arg0.errorCode);
+					}
+
+					@Override
+					public void onComplete(Object arg0) {
+						// TODO Auto-generated method stub
+						System.out.println("onComplete---" + arg0.toString());
+					}
+
+					@Override
+					public void onCancel() {
+						// TODO Auto-generated method stub
+						System.out.println("onCancel---");
+					}
+				});
+			}
+		} else {
+			Toast.makeText(context, this.getString(R.string.network_no_string),
+					Toast.LENGTH_SHORT).show();
 		}
 	}
-	
+
 	/**
 	 * sino登录
+	 * 
 	 * @param view
 	 */
-	public void loginBySino(View view){
-		if(NetworkConn.getInstance(context).isNetWorkConn()){
+	public void loginBySino(View view) {
+		if (NetworkConn.getInstance(context).isNetWorkConn()) {
 			System.out.println("登录");
-		}else{
-			Toast.makeText(context, this.getString(R.string.network_no_string), Toast.LENGTH_SHORT).show();
+		} else {
+			Toast.makeText(context, this.getString(R.string.network_no_string),
+					Toast.LENGTH_SHORT).show();
 		}
 	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		System.out.println("resultCode--" + resultCode);
+		System.out.println("resultCode--" + requestCode);
+		mTencent.onActivityResult(requestCode, resultCode, data);
+	}
+
 	/**
 	 * @Title: initViewPager
 	 * @Description: TODO(初始化viewpager)
@@ -183,5 +238,14 @@ public class SplashActivity extends Activity implements OnPageChangeListener{
 		}
 	}
 
-	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		if (mTencent != null) {
+			if (!mTencent.isSessionValid()) {
+				mTencent.logout(getApplicationContext());
+			}
+		}
+	}
 }
