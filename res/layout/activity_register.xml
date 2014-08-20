@@ -41,7 +41,9 @@
             android:text="@string/verify"
             android:textColor="@drawable/btn_text_color"
             android:textSize="@dimen/numberSize" 
-            android:layout_marginRight="@dimen/register_padding_right"/>
+            android:layout_marginRight="@dimen/register_padding_right"
+            android:clickable="true"
+            android:onClick="verify"/>
     </RelativeLayout>
 
     <LinearLayout

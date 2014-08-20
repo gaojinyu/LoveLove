@@ -20,4 +20,6 @@ package com.haydar.lovelove.util;
 public class LocalParams {
 
 	public static final String SHARD_ISFIRST="isFirst";	//是否第一次启动
+	public static final String DOMAI="192.168.1.116";
+	public static final int POTY=5222;
 }
