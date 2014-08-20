@@ -43,15 +43,4 @@
         android:clickable="true"
         android:onClick="loginByQQ"
          android:layout_marginBottom="10dp"/>
-       <Button
-        android:id="@+id/login_sino_btn"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_login_sino_text"
-        android:background="@drawable/login_sino_bg" 
-        android:textColor="#ffffff"
-        android:onClick="loginBySino"
-        android:clickable="true"
-         android:layout_marginBottom="10dp"/>
-
 </LinearLayout>

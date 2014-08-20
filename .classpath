@@ -7,5 +7,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="libs/mta-sdk-1.0.0.jar"/>
 	<classpathentry kind="lib" path="libs/open_sdk.jar"/>
+	<classpathentry kind="lib" path="libs/asmack-android-8-4.0.3.jar" sourcepath="C:/Users/gjy/Desktop/asmack-android-8-source-4.0.3.zip"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

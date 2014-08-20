@@ -28,6 +28,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.haydar.lovelove.R;
+import com.haydar.lovelove.register.RegisterActivity;
 import com.haydar.lovelove.util.LocalParams;
 import com.haydar.lovelove.util.NetworkConn;
 import com.tencent.a.b.m;
@@ -59,6 +60,8 @@ public class SplashActivity extends Activity implements OnPageChangeListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_splash);
+		mTencent = Tencent.createInstance("1102003725",
+				this.getApplicationContext());
 		context = this;
 		mSplashNoFirst = (FrameLayout) findViewById(R.id.splash_layout_no_first);
 		mSplashYesFist = (RelativeLayout) findViewById(R.id.splash_layout_yes_first);
@@ -96,12 +99,7 @@ public class SplashActivity extends Activity implements OnPageChangeListener {
 	 * @param view
 	 */
 	public void register(View view) {
-		if (NetworkConn.getInstance(context).isNetWorkConn()) {
-			System.out.println("登录");
-		} else {
-			Toast.makeText(context, this.getString(R.string.network_no_string),
-					Toast.LENGTH_SHORT).show();
-		}
+		startActivity(new Intent(SplashActivity.this, RegisterActivity.class));
 	}
 
 	/**
@@ -112,8 +110,6 @@ public class SplashActivity extends Activity implements OnPageChangeListener {
 	public void loginByQQ(View view) {
 		if (NetworkConn.getInstance(context).isNetWorkConn()) {
 			if (!mTencent.isSessionValid()) {
-				mTencent = Tencent.createInstance("1102003725",
-						this.getApplicationContext());
 				mTencent.login(this, "all", new IUiListener() {
 					@Override
 					public void onError(UiError arg0) {
@@ -140,20 +136,6 @@ public class SplashActivity extends Activity implements OnPageChangeListener {
 		}
 	}
 
-	/**
-	 * sino登录
-	 * 
-	 * @param view
-	 */
-	public void loginBySino(View view) {
-		if (NetworkConn.getInstance(context).isNetWorkConn()) {
-			System.out.println("登录");
-		} else {
-			Toast.makeText(context, this.getString(R.string.network_no_string),
-					Toast.LENGTH_SHORT).show();
-		}
-	}
-
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
@@ -161,7 +143,6 @@ public class SplashActivity extends Activity implements OnPageChangeListener {
 		System.out.println("resultCode--" + requestCode);
 		mTencent.onActivityResult(requestCode, resultCode, data);
 	}
-
 	/**
 	 * @Title: initViewPager
 	 * @Description: TODO(初始化viewpager)
