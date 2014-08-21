@@ -15,6 +15,8 @@ import org.jivesoftware.smack.XMPPConnection;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.haydar.lovelove.R;
@@ -28,8 +30,9 @@ import com.haydar.lvoelove.im.IMClient;
  * 
  */
 
-public class RegisterActivity extends Activity {
+public class RegisterActivity extends Activity implements OnClickListener {
 	private EditText mEditText;
+	private Button mVerifyBtn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +43,34 @@ public class RegisterActivity extends Activity {
 
 	private void initView() {
 		mEditText = (EditText) findViewById(R.id.phoneNumber_edit);
+		mVerifyBtn=(Button)findViewById(R.id.register_btn);
+		mVerifyBtn.setOnClickListener(this);
 	}
 
-	public void verify(View view) {
+	public void verify() {
 		String str = String.valueOf(mEditText.getText()).trim();
 		if (str != null || str != "") {
 			System.out.println("开始链接");
-			IMClient.getInstace();
-			IMClient.register("1", "1");
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+					IMClient.getInstace();
+					IMClient.register("1", "1");
+				}
+			}).start();
+			
+		}
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.register_btn:
+			verify();
+			break;
+
+		default:
+			break;
 		}
 	}
 }
