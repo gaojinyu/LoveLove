@@ -22,4 +22,6 @@ public class LocalParams {
 	public static final String SHARD_ISFIRST="isFirst";	//是否第一次启动
 	public static final String DOMAI="192.168.1.116";
 	public static final int POTY=5222;
+	public static final String SMS_APPKEY="2d4ec6bc08c3";
+	public static final String SMD_APP_SECRET="fdab7598c0920077fb5579c77833170b";
 }
