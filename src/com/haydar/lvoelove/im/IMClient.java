@@ -32,7 +32,7 @@ public class IMClient {
 	
 	private IMClient() {
 		ConnectionConfiguration config = new ConnectionConfiguration(
-				"192.168.200.80", Integer.parseInt("5222"), "192.168.200.80");
+				LocalParams.DOMAI, Integer.parseInt("5222"), LocalParams.DOMAI);
 		connection = new XMPPTCPConnection(config);
 		try {
 			connection.connect();
@@ -91,10 +91,10 @@ public class IMClient {
 		System.out.println(password);
 		attributes.put("username", "2");
 		attributes.put("password", "2");
-		attributes.put("email", "409364087@qq.com");
+		attributes.put("email", "111111@qq.com");
 		attributes.put("name", "1");
 		attributes.put("android", "geolo_createUser_android");
-		attributes.put("phone", "15601129849");
+		attributes.put("phone", "1111111");
 		attributes.put("icon", "http://www.baidu.com");
 		reg.setAttributes(attributes);
 		reg.setTo(connection.getServiceName());

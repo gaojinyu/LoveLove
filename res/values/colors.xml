@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-   <color name="white">#ffffffff</color>
-   <color name="page_bg">#fff1f1f1</color>
-       <color name="description_text_color">#ff7c7d81</color>
-           <color name="register_hint_color">#ffd0d0d0</color>
-               <color name="black">#ff000000</color>
+
+    <color name="white">#ffffffff</color>
+    <color name="page_bg">#fff1f1f1</color>
+    <color name="description_text_color">#ff7c7d81</color>
+    <color name="register_hint_color">#ffd0d0d0</color>
+    <color name="black">#ff000000</color>
+	<color name="nav_btn_bg_pressed">#EE8262</color>
 </resources>
