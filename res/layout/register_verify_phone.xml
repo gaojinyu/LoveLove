@@ -68,11 +68,12 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/phone_verify_btn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/every_layout_height"
             android:gravity="center"
-              android:background="@drawable/common_btn_bg"
+            android:textSize="@dimen/textSize_prot" 
+              android:background="@drawable/common_bg_button"
             android:text="Button" />
     </LinearLayout>
 

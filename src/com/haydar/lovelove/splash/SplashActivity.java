@@ -29,6 +29,7 @@ import android.widget.Toast;
 
 import com.haydar.lovelove.R;
 import com.haydar.lovelove.register.RegisterActivity;
+import com.haydar.lovelove.register.RegisterUserInfoActivity;
 import com.haydar.lovelove.util.LocalParams;
 import com.haydar.lovelove.util.NetworkConn;
 import com.tencent.a.b.m;
@@ -86,7 +87,7 @@ public class SplashActivity extends Activity implements OnPageChangeListener {
 	public void login(View view) {
 
 		if (NetworkConn.getInstance(context).isNetWorkConn()) {
-
+			startActivity(new Intent(SplashActivity.this, RegisterUserInfoActivity.class));
 		} else {
 			Toast.makeText(context, this.getString(R.string.network_no_string),
 					Toast.LENGTH_SHORT).show();

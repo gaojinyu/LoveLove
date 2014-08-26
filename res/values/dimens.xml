@@ -14,5 +14,16 @@
     <dimen name="textsize_contrycode">13.0sp</dimen>
     <dimen name="textSize_input">14.0sp</dimen>
     <dimen name="register_padding_right">7.0dip</dimen>
-
+    <dimen name="margin_value10">30.0dip</dimen>
+    <dimen name="textSize12">13.0sp</dimen>
+ <dimen name="big_image_height">80.0dip</dimen>
+   <dimen name="image_width_mark_height">54.0dip</dimen>
+    <dimen name="margin_value61">4.0dip</dimen>
+        <dimen name="margin_value5">15.0dip</dimen>
+            <dimen name="item_view_height">40.0dip</dimen>
+                <dimen name="register_text_padding">10.0dip</dimen>
+                 <dimen name="textSize11">16.0sp</dimen>
+                  <dimen name="margin_value60">5.0dip</dimen>
+                   <dimen name="margin_value4">0.0dip</dimen>
+                   <dimen name="margin_value6">8.0dip</dimen>
 </resources>

@@ -7,4 +7,6 @@
     <color name="register_hint_color">#ffd0d0d0</color>
     <color name="black">#ff000000</color>
 	<color name="nav_btn_bg_pressed">#EE8262</color>
+	 <color name="right_notice">#ffa7a7a7</color>
+    <color name="right_message">#ff000000</color>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="gender">性别</string>
     <string name="app_name">爱爱</string>
     <string name="action_settings">Settings</string>
 	<string name="button_login_text">登&#160;&#160;陆</string>
@@ -10,10 +10,17 @@
 	<string name="network_no_string">当前网络连接不可用</string>
 	<string name="verify">验证</string>
 	  <string name="register_title">注册</string>
+	   <string name="register_userinfo_title">个人资料</string>
 	     <string name="logon_msg_getcode">请输入正确的手机号码</string>
 	     <string name="logon_msg_verify">已经发送短信验证码到你注册的号码，请填写！</string>
 	       <string name="reg_hint_phonenumber">手机号码</string>
 	        <string name="reg_hint_verify">验证码</string>
 	       <string name="phone_none">手机号为空</string>
 	       <string name="phone_error">手机号格式不正确</string>
+	       <string name="inputuserinfo">上传真实头像并且资料完善，交友更有保障!</string>
+	        <string name="addphoto">"添加头像"</string>
+	          <string name="nickname">昵称</string>
+	           <string name="personal_option">设置你的个性签名</string>
+	               <string name="birthday">生日</string>
+	               <string name="job">工作</string>
 </resources>

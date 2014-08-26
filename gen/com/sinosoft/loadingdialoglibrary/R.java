@@ -11,28 +11,28 @@ public final class R {
 		public static final int library_loading_progressbar = 0x7f040006;
 	}
 	public static final class drawable {
-		public static final int ic_launcher = 0x7f02005f;
-		public static final int library_loading_box_background = 0x7f020060;
-		public static final int library_loading_dialog_bg = 0x7f020061;
-		public static final int library_progress_bar_comment_loading = 0x7f020062;
-		public static final int library_progress_bar_loading = 0x7f020063;
+		public static final int ic_launcher = 0x7f020062;
+		public static final int library_loading_box_background = 0x7f020063;
+		public static final int library_loading_dialog_bg = 0x7f020064;
+		public static final int library_progress_bar_comment_loading = 0x7f020065;
+		public static final int library_progress_bar_loading = 0x7f020066;
 	}
 	public static final class id {
-		public static final int library_loadingdialog_image = 0x7f050045;
-		public static final int library_loadingdialog_layout = 0x7f050044;
-		public static final int library_loadingdialog_title = 0x7f050046;
-		public static final int library_progressbar_img = 0x7f050047;
+		public static final int library_loadingdialog_image = 0x7f0a0059;
+		public static final int library_loadingdialog_layout = 0x7f0a0058;
+		public static final int library_loadingdialog_title = 0x7f0a005a;
+		public static final int library_progressbar_img = 0x7f0a005b;
 	}
 	public static final class layout {
-		public static final int library_loadingdialog_layout = 0x7f03001c;
-		public static final int library_progressbar_layout = 0x7f03001d;
+		public static final int library_loadingdialog_layout = 0x7f03001d;
+		public static final int library_progressbar_layout = 0x7f03001e;
 	}
 	public static final class string {
-		public static final int app_name = 0x7f0a000d;
+		public static final int app_name = 0x7f080051;
 	}
 	public static final class style {
-		public static final int AppBaseTheme = 0x7f0b0083;
-		public static final int AppTheme = 0x7f0b0084;
-		public static final int loading_dialog = 0x7f0b0085;
+		public static final int AppBaseTheme = 0x7f090085;
+		public static final int AppTheme = 0x7f090000;
+		public static final int loading_dialog = 0x7f090086;
 	}
 }

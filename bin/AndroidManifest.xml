@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
@@ -34,8 +35,8 @@
         </activity>
         <activity
             android:name="com.haydar.lovelove.register.RegisterActivity"
-            android:windowSoftInputMode="stateAlwaysVisible"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysVisible" />
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
             android:screenOrientation="portrait"
@@ -52,6 +53,10 @@
 
                 <data android:scheme="tencent1102003725" />
             </intent-filter>
+        </activity>
+        <activity
+           android:name="com.haydar.lovelove.register.RegisterUserInfoActivity"
+            android:windowSoftInputMode="stateAlwaysVisible" >
         </activity>
     </application>
 
