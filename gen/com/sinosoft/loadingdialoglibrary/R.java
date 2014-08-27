@@ -18,10 +18,10 @@ public final class R {
 		public static final int library_progress_bar_loading = 0x7f020066;
 	}
 	public static final class id {
-		public static final int library_loadingdialog_image = 0x7f0a0059;
-		public static final int library_loadingdialog_layout = 0x7f0a0058;
-		public static final int library_loadingdialog_title = 0x7f0a005a;
-		public static final int library_progressbar_img = 0x7f0a005b;
+		public static final int library_loadingdialog_image = 0x7f0a005b;
+		public static final int library_loadingdialog_layout = 0x7f0a005a;
+		public static final int library_loadingdialog_title = 0x7f0a005c;
+		public static final int library_progressbar_img = 0x7f0a005d;
 	}
 	public static final class layout {
 		public static final int library_loadingdialog_layout = 0x7f03001d;

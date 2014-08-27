@@ -229,21 +229,34 @@
                         android:textSize="@dimen/textSize11" />
 
                    
-                    <EditText
-                        android:id="@+id/job_edittext"
+                   
+                    <LinearLayout 
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="fill_parent"
                         android:layout_weight="3.0"
-                        android:background="@null"
-                        android:gravity="left|center"
-                        android:maxLength="21"
-                        android:paddingLeft="@dimen/margin_value60"
-                        android:paddingRight="@dimen/margin_value4"
-                        android:singleLine="true"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/textSize11" >
-                     
-                    </EditText>
+                        >
+                        <RadioGroup 
+                            android:id="@+id/radio_group_sex"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="horizontal"  
+                            android:gravity="left|center"
+                            >
+                            <RadioButton 
+                                android:id="@+id/radio_boy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                 android:text="男"  
+                                />
+                            <RadioButton 
+                                android:id="@+id/radio_girl"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="女"
+                                />
+                        </RadioGroup>
+                        
+                    </LinearLayout>
                 </LinearLayout>
                 <ImageView
                     android:layout_width="fill_parent"
